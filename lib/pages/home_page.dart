@@ -2,11 +2,13 @@
 
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
+
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatelessWidget {
   //const HomePage({super.key});
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     const int days = 30;
     const String name = "Chetan";
@@ -15,10 +17,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-        body: Center(
-          child: Text("Welcome to $days days of flutter with $name"),
-        ),
-        drawer: Drawer(),
-      );
+      body: Center(
+        child: Text("Welcome to $days days of flutter with $name"),
+      ),
+      drawer: MyDrawer(),
+    );
   }
 }
