@@ -7,7 +7,7 @@ import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
-import 'package:flutter_catalog/widgets/themes.dart';
+//import 'package:flutter_catalog/widgets/themes.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -40,10 +40,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          backgroundColor: MyTheme.darkBluishColor,
-          child: Icon(CupertinoIcons.cart),
+          backgroundColor:
+              context.theme.floatingActionButtonTheme.backgroundColor,
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
         ),
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.canvasColor,
         body: SafeArea(
           child: Container(
             padding: Vx.m16,
