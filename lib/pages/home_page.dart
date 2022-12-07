@@ -18,16 +18,16 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-final url = "https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
-
 class _HomePageState extends State<HomePage> {
+  final url = 'https://api.jsonbin.io/v3/b/638f1e196a51bc4f7049066c';
+
   @override
   void initState() {
     super.initState();
     loadData();
   }
 
-  loadData() async {
+  Future loadData() async {
     await Future.delayed(Duration(seconds: 2));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
